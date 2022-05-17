@@ -1,0 +1,9 @@
+server:
+  port: 8080
+
+spring:
+  datasource:
+    url: jdbc:mysql://sh-cynosdbmysql-grp-7sq51fea.sql.tencentcdb.com:26858/springboot_demo?characterEncoding=UTF-8
+    username: root
+    password: vqx3wDT6
+    driverClassName: com.mysql.jdbc.Driver
