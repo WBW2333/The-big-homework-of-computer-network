@@ -1,3 +1,6 @@
+后端部署地址
+https://cost-recorder-back-1930956-1311933639.ap-shanghai.run.tcloudbase.com/
+
 后端API
 
 | API | 参数 | 说明 | 状态 |
