@@ -16,7 +16,7 @@ import java.util.Map;
 @RestController
 public class LoginController {
 
-    @GetMapping("api/login")
+    @GetMapping("/api/login")
     public LoginResult login(String code) throws IOException {
         Config config = new Config();
         System.out.println(code);

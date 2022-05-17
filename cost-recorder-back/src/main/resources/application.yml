@@ -7,3 +7,6 @@ spring:
     username: root
     password: vqx3wDT6
     driverClassName: com.mysql.jdbc.Driver
+  jackson:
+    date-format: yyyy/MM/dd
+    time-zone: GMT+8
