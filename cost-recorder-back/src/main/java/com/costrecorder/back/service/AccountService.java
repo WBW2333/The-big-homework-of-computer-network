@@ -17,11 +17,11 @@ public class AccountService {
     @Autowired
     AccountDao accountDao;
 
-    public List<Account> get(String userid) {
+    public List<Account> getAll(String userid) {
         return accountDao.findByUserid(userid);
     }
 
-    public List<Account> get(String userid, Date startDate, Date endDate) {
+    public List<Account> getByDate(String userid, Date startDate, Date endDate) {
         List<Account> result = new ArrayList<>();
         List<Account> accounts = accountDao.findByUserid(userid);
         for (Account account : accounts) {
@@ -33,7 +33,7 @@ public class AccountService {
         return result;
     }
 
-    public List<Account> get(String userid, String category) {
+    public List<Account> getByCategory(String userid, String category) {
         List<Account> result = new ArrayList<>();
         List<Account> accounts = accountDao.findByUserid(userid);
         for (Account account : accounts) {
@@ -44,7 +44,7 @@ public class AccountService {
         return result;
     }
 
-    public List<Account> get(String userid, int type) {
+    public List<Account> getByType(String userid, int type) {
         List<Account> result = new ArrayList<>();
         List<Account> accounts = accountDao.findByUserid(userid);
         for (Account account : accounts) {

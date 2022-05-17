@@ -20,22 +20,22 @@ public class AccountController {
     AccountService accountService;
 
     @GetMapping("/all")
-    public List<Account> get(String userid) {
-        return accountService.get(userid);
+    public List<Account> getAll(String userid) {
+        return accountService.getAll(userid);
     }
 
     @GetMapping("/date")
-    public List<Account> get(String userid, Date startDate, Date endDate) {
-        return accountService.get(userid, startDate, endDate);
+    public List<Account> getByDate(String userid, Date startDate, Date endDate) {
+        return accountService.getByDate(userid, startDate, endDate);
     }
 
     @GetMapping("/category")
-    public List<Account> get(String userid, String category) {
-        return accountService.get(userid, category);
+    public List<Account> getByCategory(String userid, String category) {
+        return accountService.getByCategory(userid, category);
     }
 
     @GetMapping("/type")
-    public List<Account> get(String userid, int type) {
-        return accountService.get(userid, type);
+    public List<Account> getByType(String userid, int type) {
+        return accountService.getByType(userid, type);
     }
 }
