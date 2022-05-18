@@ -5,8 +5,8 @@ https://cost-recorder-back-1930956-1311933639.ap-shanghai.run.tcloudbase.com/
 
 | API | 参数 | 说明 | 状态 |
 | :- | :- | :- | :- |
-| api/login | code | 验证用户登录 | 测试中 |
-| api/account/add | {} | 输入json格式，包括userid,type,category,note(可缺少),amount,date(格式yyyy/MM/dd)添加账目 | 测试中 |
+| api/login | code | 验证用户登录 | 可用 |
+| api/account/add | {} | 输入json格式，包括userid,type,category,note(可缺少),amount,date(格式yyyy/MM/dd)添加账目 | 可用 |
 | api/account/all | userid | 查询用户的所有账目 | 可用 |
 | api/account/type | userid, type | 0代表支出，1代表收入 | 可用 |
 | api/account/category | userid, category | 以账单种类查询 | 可用 |
