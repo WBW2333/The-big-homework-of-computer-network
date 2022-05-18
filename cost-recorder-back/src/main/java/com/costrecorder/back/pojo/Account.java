@@ -1,6 +1,8 @@
 package com.costrecorder.back.pojo;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import lombok.Data;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
 import java.util.Date;
@@ -10,96 +12,29 @@ import java.util.Date;
  */
 @Entity
 @Table (name = "account")
+@Data
 public class Account {
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
-    int id;
+    private int id;
 
-    @Column(name = "type")
-    int type;
+    @Column(name = "record_type")
+    private int type;
 
     @Column(name = "category")
-    String category;
+    private String category;
 
-    @Column(name = "desc")
-    String desc;
+    @Column(name = "note")
+    private String note;
 
     @Column(name = "amount")
-    double amount;
+    private double amount;
 
-    @Column(name = "date")
-    Date date;
+    @DateTimeFormat(pattern = "yyyy/MM/dd")
+    @Column(name = "record_date")
+    private Date date;
 
     @Column(name = "userid")
-    String userid;
-
-    public Account() {
-    }
-
-    public Account(int id, int type, String category, String desc, double amount, Date date, String userid) {
-        this.id = id;
-        this.type = type;
-        this.category = category;
-        this.desc = desc;
-        this.amount = amount;
-        this.date = date;
-        this.userid = userid;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public int getType() {
-        return type;
-    }
-
-    public void setType(int type) {
-        this.type = type;
-    }
-
-    public String getCategory() {
-        return category;
-    }
-
-    public void setCategory(String category) {
-        this.category = category;
-    }
-
-    public String getDesc() {
-        return desc;
-    }
-
-    public void setDesc(String desc) {
-        this.desc = desc;
-    }
-
-    public double getAmount() {
-        return amount;
-    }
-
-    public void setAmount(double amount) {
-        this.amount = amount;
-    }
-
-    public Date getDate() {
-        return date;
-    }
-
-    public void setDate(Date date) {
-        this.date = date;
-    }
-
-    public String getUserid() {
-        return userid;
-    }
-
-    public void setUserid(String userid) {
-        this.userid = userid;
-    }
+    private String userid;
 }

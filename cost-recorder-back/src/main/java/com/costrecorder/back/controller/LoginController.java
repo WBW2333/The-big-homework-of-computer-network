@@ -1,7 +1,7 @@
 package com.costrecorder.back.controller;
 
 import com.costrecorder.back.Config;
-import com.costrecorder.back.pojo.LoginResult;
+import com.costrecorder.back.pojo.ClientResult;
 import com.costrecorder.back.utils.HttpUtils;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -17,7 +17,7 @@ import java.util.Map;
 public class LoginController {
 
     @GetMapping("/api/login")
-    public LoginResult login(String code) throws IOException {
+    public ClientResult login(String code) throws IOException {
         Config config = new Config();
         System.out.println(code);
         String urlHeader = "https://api.weixin.qq.com/sns/jscode2session";
@@ -28,6 +28,6 @@ public class LoginController {
         urlParams.put("grant_type", "authorization_code");
         String httpResult = HttpUtils.getResponse(urlHeader,urlParams);
 
-        return new LoginResult(httpResult);
+        return new ClientResult(httpResult);
     }
 }

@@ -1,11 +1,10 @@
 package com.costrecorder.back.controller;
 
 import com.costrecorder.back.pojo.Account;
+import com.costrecorder.back.pojo.ClientResult;
 import com.costrecorder.back.service.AccountService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.Date;
 import java.util.List;
@@ -18,6 +17,19 @@ import java.util.List;
 public class AccountController {
     @Autowired
     AccountService accountService;
+
+    @PostMapping("/add")
+    public ClientResult add (@RequestBody Account requestAccount) {
+        Account account = new Account();
+        account.setCategory(requestAccount.getCategory());
+        account.setDate(requestAccount.getDate());
+        account.setNote(requestAccount.getNote());;
+        account.setType(requestAccount.getType());
+        account.setUserid(requestAccount.getUserid());
+        account.setAmount(requestAccount.getAmount());
+        accountService.addAccount(account);
+        return new ClientResult("Success!");
+    }
 
     @GetMapping("/all")
     public List<Account> getAll(String userid) {

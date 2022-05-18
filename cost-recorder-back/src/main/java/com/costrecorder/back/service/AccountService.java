@@ -54,4 +54,8 @@ public class AccountService {
         }
         return result;
     }
+
+    public void addAccount(Account account) {
+        accountDao.save(account);
+    }
 }

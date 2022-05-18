@@ -3,10 +3,10 @@ package com.costrecorder.back.pojo;
 /**
  * @author yinzihang
  */
-public class LoginResult {
+public class ClientResult {
     String msg;
 
-    public LoginResult(String msg) {
+    public ClientResult(String msg) {
         this.msg = msg;
     }
 
