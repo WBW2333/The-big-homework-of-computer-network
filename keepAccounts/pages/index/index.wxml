@@ -75,8 +75,5 @@
       </view>
     </view>
   </view>
-  <view wx:if="{{show==true}}">
-    <view class="jumpBox">here</view>
-  </view>
 </page>
 
