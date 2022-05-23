@@ -10,7 +10,7 @@ const nowDay = date.getDate()
 let daysInMonth = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
 // 根据年月 获取当月的总天数
 let getDays = function (year, month) {
-    console.log(year, month);
+    //console.log(year, month);
     if (month === 2) {
         return ((year % 4 === 0) && ((year % 100) !== 0)) || (year % 400 === 0) ? 29 : 28
     } else {
@@ -82,11 +82,7 @@ Page({
       form:'',
       note:'',
       amount:'',
-      date:{
-        year:'',
-        month:'',
-        day:'',
-      },
+      date:'',
     }
   },
   onLoad: function(options) {
@@ -108,9 +104,7 @@ Page({
   bindChange: function (e) {
     let val = e.detail.value;
     setDate(this.data.years[val[0]], this.data.months[val[1]], this.data.days[val[2]], this);
-    this.data.record.date.year=this.data.years[val[0]];
-    this.data.record.date.month=this.data.months[val[1]];
-    this.data.record.date.day=this.data.days[val[2]];
+    this.data.record.date=this.data.years[val[0]]+"/"+this.data.months[val[1]]+"/"+this.data.days[val[2]];
     //console.log(this.data.record.date);
   },
   getAmount:function(e){
@@ -126,10 +120,13 @@ Page({
     })
   },
   compelete:function(){
-    if(this.data.record.date.year==''){
-      this.data.record.date.year=this.data.year;
-      this.data.record.date.month=this.data.month;
-      this.data.record.date.day=this.data.day;
+    var yyyy=this.data.year+'';
+    var mm=this.data.month+'';
+    var dd=this.data.day+'';
+    var d=yyyy+"/"+mm+"/"+dd;
+    console.log(d);
+    if(this.data.record.date==''){
+      this.data.record.date=d;
     }
     this.setData({
       record:this.data.record,
@@ -151,7 +148,56 @@ Page({
         confirmColor: '#000000'	
       })  
     }
-    
-    
+    var openid;
+    wx.getStorage({
+      key: 'userinfo',
+      success (res) {
+        openid=res.data.openid;
+        //console.log(res.data)
+      }
+    })
+    /*
+    wx.getUserInfo({
+      success: function(res) {
+        var userInfo = res.userInfo;
+        console.log(userInfo);
+        var userInfo = res.userInfo
+        var nickName = userInfo.nickName
+        var avatarUrl = userInfo.avatarUrl
+        var gender = userInfo.gender //性别 0：未知、1：男、2：女
+        var province = userInfo.province
+        var city = userInfo.city
+        var country = userInfo.country
+      }
+    })
+    */
+    wx.request({
+      url: 'https://cost-recorder-back-1930956-1311933639.ap-shanghai.run.tcloudbase.com/api/account/add',
+      data:  {
+        type:this.data.record.type,
+        category:this.data.record.form,
+        note:this.data.record.note,
+        amount:this.data.record.amount,
+        date:this.data.record.date,
+        userid:openid,
+      },
+      method: 'POST', // OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT
+      // header: {}, // 设置请求的 header
+      success: function(res){
+        // success
+        //console.log("toRed success"+res.data.uid+' '+res.data.uname);
+        console.log("toRed success");
+      },
+      fail: function(res) {
+        // fail
+        //console.log("toRed fail:"+res);
+        console.log("toRed fail:");
+      },
+      complete: function(res) {
+        // complete
+        //console.log("toRed complete:"+res);
+        console.log("toRed complete:");
+      }
+    })
   }
 })
