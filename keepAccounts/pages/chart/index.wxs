@@ -1,0 +1,11 @@
+var Fix = {
+    //百分比数据
+      Percentage: function(number1,number2){
+        return (Math.round(number1/(number2)*10000)/100.00+"%")
+    }
+  }
+  module.exports = {
+    Percentage: filters.Percentage
+  }
+  
+  
