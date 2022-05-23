@@ -9,11 +9,12 @@
 | API | HTTP方法 | 参数 | 说明 | 状态 |
 | :- | :- | :- | :- | :- |
 | api/login | GET | code | 验证用户登录 | 可用 |
-| api/account/add | POST | {} | 输入json格式添加账目，包括userid、type、category、note（可缺少）、amount、date（格式yyyy/MM/dd） | 可用 |
 | api/account/all | GET | userid | 查询userid用户的所有账目，返回json格式，返回格式 | 可用 |
 | api/account/type | GET | userid, type | 查询userid用户的支出或收入账目,0代表支出，1代表收入 | 可用 |
 | api/account/category | GET | userid, category | 查询userid用户的特定种类的账单 | 可用 |
 | api/account/date | GET | userid, startDate, endDate | 查询两日期之间的userid用户的账目 | 可用 |
+| api/account/add | POST | {} | 输入json格式添加账目，包括userid、type、category、note（可缺少）、amount、date（格式yyyy/MM/dd） | 可用 |
+| api/account/delete | POST | id | 输入账目编号删除账目 | 可用 |
 
 附：后端返回JSON格式
 

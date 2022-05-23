@@ -31,6 +31,12 @@ public class AccountController {
         return new ClientResult("Success!");
     }
 
+    @PostMapping("/delete")
+    public ClientResult delete (int id) {
+        accountService.deleteAccount(id);
+        return new ClientResult("Success!");
+    }
+
     @GetMapping("/all")
     public List<Account> getAll(String userid) {
         return accountService.getAll(userid);

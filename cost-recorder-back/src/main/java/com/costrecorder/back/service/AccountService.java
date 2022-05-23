@@ -58,4 +58,8 @@ public class AccountService {
     public void addAccount(Account account) {
         accountDao.save(account);
     }
+
+    public void deleteAccount(int id) {
+        accountDao.deleteById(id);
+    }
 }
