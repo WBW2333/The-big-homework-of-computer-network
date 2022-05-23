@@ -1,0 +1,34 @@
+
+<view>
+    <view class="por">
+    <view class="selectBox">
+        <view class="selectBox_show">
+            <button id="select_box" bindtap="display_box">{{dataList[kind].value}}</button>
+            <view class="selectBox_list" hidden="{{isShowSelect}}">
+            <view class="selectBox_listLi" wx:for="{{dataList}}" wx:key="id" bindtap="select" data-item="{{item}}" data-index="{{index}}">
+                {{item.value}}
+            </view>
+            </view>
+
+            <button id="select_chart" bindtap="display_chart_box">{{chart_type_name[chart_type]}}</button>
+            <view class="selectChart_list" hidden="{{isShowSelectChart}}">
+            <view class="selectChart_listLi" wx:for="{{chart_type_name}}" wx:key="id" bindtap="select_chart" data-item="{{item}}" data-index="{{index}}">
+                {{item}}
+            </view>
+            </view>
+        </view>
+    </view>
+    </view>
+
+<canvas canvas-id="Canvas" class="chart"></canvas>
+
+<view class="bill_list" wx:for="{{come[kind]}}">
+    {{item.name}}
+    {{item.data}}
+    <!-- {{Fix.percentage(item.cost, tot[kind])}} -->
+    <view class="progress-bar">
+    <view class="progress" style="width: {{(item.data/tot[kind])*100 + '%'}}"> </view>
+    </view>
+</view>
+
+</view>
