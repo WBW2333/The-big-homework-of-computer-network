@@ -10,10 +10,44 @@
 | :- | :- | :- | :- | :- |
 | api/login | GET | code | 验证用户登录 | 可用 |
 | api/account/add | POST | {} | 输入json格式添加账目，包括userid、type、category、note（可缺少）、amount、date（格式yyyy/MM/dd） | 可用 |
-| api/account/all | GET | userid | 查询userid用户的所有账目，返回json格式，返回格式如图1 | 可用 |
+| api/account/all | GET | userid | 查询userid用户的所有账目，返回json格式，返回格式 | 可用 |
 | api/account/type | GET | userid, type | 查询userid用户的支出或收入账目,0代表支出，1代表收入 | 可用 |
 | api/account/category | GET | userid, category | 查询userid用户的特定种类的账单 | 可用 |
 | api/account/date | GET | userid, startDate, endDate | 查询两日期之间的userid用户的账目 | 可用 |
+
+附：后端返回JSON格式
+
+```JSON
+[
+    {
+        "id": 1,
+        "type": 0,
+        "category": "餐饮",
+        "note": "黄焖鸡",
+        "amount": 20,
+        "date": "2022/05/17",
+        "userid": "0000"
+    },
+    {
+        "id": 2,
+        "type": 0,
+        "category": "购物",
+        "note": "零食",
+        "amount": 11.5,
+        "date": "2022/05/11",
+        "userid": "0000"
+    },
+    {
+        "id": 3,
+        "type": 1,
+        "category": "捡钱",
+        "note": null,
+        "amount": 10,
+        "date": "2022/05/03",
+        "userid": "0000"
+    }
+]
+```
 
 ## 后端调用方法
 
@@ -82,5 +116,5 @@ test() {
 | category | string | 账目种类：如餐饮，购物，工资等 |
 | note | string | 账目备注 |
 | amount | double | 账目金额 |
-| date | date | 账目日期 |
+| date | date | 账目日期，格式yyyy/MM/dd |
 | userid | string | 传入用户的openid作为用户唯一识别符 |
