@@ -2,11 +2,19 @@ server:
   port: 8080
 
 spring:
+  # MySQL 配置
   datasource:
-    url: jdbc:mysql://sh-cynosdbmysql-grp-7sq51fea.sql.tencentcdb.com:26858/springboot_demo?characterEncoding=UTF-8
-    username: root
-    password: vqx3wDT6
-    driverClassName: com.mysql.jdbc.Driver
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    type: com.alibaba.druid.pool.DruidDataSource
+    druid:
+      url: jdbc:mysql://sh-cynosdbmysql-grp-7sq51fea.sql.tencentcdb.com:26858/springboot_demo?characterEncoding=UTF-8
+      username: root
+      password: RouPjs5MD8oxaIwPXd9prcv0IifYOfMf+Wak2P7Mf7mL7w3ffucebAnDBhQpui/SeCgck7byCTPVb+tlqfrxhQ==
+      # encrypt config
+      filters: config
+      connect-properties:
+        config.decrypt: true
+        config.decrypt.key: ${spring.datasource.druid.publickey}
   jackson:
     date-format: yyyy/MM/dd
     time-zone: GMT+8
