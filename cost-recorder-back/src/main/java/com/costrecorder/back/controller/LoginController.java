@@ -27,6 +27,7 @@ public class LoginController {
         urlParams.put("js_code", code);
         urlParams.put("grant_type", "authorization_code");
         String httpResult = HttpUtils.getResponse(urlHeader,urlParams);
+        System.out.println(httpResult);
 
         return new ClientResult(httpResult);
     }

@@ -28,9 +28,11 @@ public class HttpUtils {
                 }
             }
             URI uri = builder.build();
+            System.out.println(uri);
 
             HttpGet httpGet = new HttpGet(uri);
             response = httpClient.execute(httpGet);
+            System.out.println(response.getStatusLine().getStatusCode());
             if(response.getStatusLine().getStatusCode() == 200){
                 result =  EntityUtils.toString(response.getEntity());
             }
