@@ -1,0 +1,38 @@
+
+<view>
+    <view class="por">
+    <view class="selectBox">
+        <view class="selectBox_show">
+            <button id="select_box" bindtap="display_box" style="position: relative; top: 0rpx">{{dataList[kind].value}}</button>
+
+            <view class="selectChart_list">
+                <view class="selectChart_listLi" wx:for="{{chart_type_name}}" wx:key="id" bindtap="select_chart" data-item="{{item}}" data-index="{{index}}">
+                    {{item}}
+                </view>
+            </view>
+        </view>
+    </view>
+</view>
+
+<canvas canvas-id="Canvas" class="chart"></canvas>
+
+<view class="bill_list" wx:if="{{bill_is_show[kind]}}">
+    <view class="list_nameLi">
+        <p class="list_name">{{dataList[kind].value + '排行榜'}}</p>
+    </view>
+    <view class="bill_information" wx:for="{{come[kind]}}">
+        <view class="bill_text">
+            {{item.name}}
+            {{item.data}}
+        </view>
+        <!-- {{Fix.percentage(item.cost, tot[kind])}} -->
+        <view class="progress-bar">
+            <view class="progress" style="width: {{((item.data/tot[kind]))*594 + 'rpx'}}"> </view>
+        </view>
+    </view>
+</view>
+<view wx:else="">
+    <p class="list_name">未查询到用户{{dataList[kind].value}}账单记录</p>
+</view>
+</view>
+<view style="height: 160rpx;"></view>

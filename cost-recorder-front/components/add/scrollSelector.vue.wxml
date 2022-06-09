@@ -1,0 +1,9 @@
+<template name="0beef52b">
+  <view class="_div data-v-3775305f">
+    <picker-view value="{{value}}" indicator-style="height: 50px;" indicator-class="picker-view-indicator" class="_picker-view data-v-3775305f picker-view" bindchange="handleProxy" data-eventid="{{'0'}}" data-comkey="{{$k}}">
+      <picker-view-column class="_picker-view-column data-v-3775305f picker-view-col" wx:key="colIndex" key="{{colIndex}}" wx:for="{{cols}}" wx:for-index="colIndex" wx:for-item="col">
+        <view wx:key="index" key="{{index}}" wx:for="{{col}}" wx:for-index="index" wx:for-item="item" class="_view data-v-3775305f">{{item.name}}</view>
+      </picker-view-column>
+    </picker-view>
+  </view>
+</template>

@@ -1,0 +1,53 @@
+{
+    "pages": [
+        "pages/index/main",
+        "pages/logs/main",
+        "pages/counter/main",
+        "pages/user_center/main",
+        "pages/chart/index",
+        "pages/add/main",
+        "pages/detail/main"
+    ],
+    "window": {
+        "backgroundTextStyle": "light",
+        "navigationBarBackgroundColor": "#fff",
+        "navigationBarTitleText": "WeChat",
+        "navigationBarTextStyle": "black"
+    },
+    "tabBar": {
+        "custom": true,
+        "color": "#999",
+        "backgroundColor": "#fafafa",
+        "selectedColor": "#333",
+        "borderStyle": "white",
+        "list": [
+            {
+                "text": "账单",
+                "pagePath": "pages/index/main",
+                "iconPath": "static/tabs/orders-active.png",
+                "selectedIconPath": "static/tabs/orders-active.png"
+            },
+            {
+                "text": "图表",
+                "pagePath": "pages/chart/index",
+                "iconPath": "static/tabs/chart-active.png",
+                "selectedIconPath": "static/tabs/chart-active.png"
+            },
+            {
+                "text": "记账",
+                "pagePath": "pages/add/main",
+                "iconPath": "static/tabs/add.png",
+                "selectedIconPath": "static/tabs/add.png"
+            },
+            {
+                "text": "用户中心",
+                "pagePath": "pages/user_center/main",
+                "iconPath": "static/tabs/user-active.png",
+                "selectedIconPath": "static/tabs/user-active.png"
+            }
+        ],
+        "position": "bottom"
+    },
+    "sitemapLocation": "sitemap.json",
+    "lazyCodeLoading": "requiredComponents"
+}

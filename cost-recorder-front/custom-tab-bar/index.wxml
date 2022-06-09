@@ -1,0 +1,16 @@
+<!-- 自定义tab -->
+<view class="tab-bar" wx:if="{{show_tabbar}}">
+    <view class="center_part">
+        <image class="center_img center-has-image" src="{{list[selected].selectedIconPath}}"></image>
+    </view>
+    <view wx:for="{{list}}" wx:key="index" class="tab-bar-item" data-path="{{item.pagePath}}" data-index="{{index}}" bindtap="switchTab" style="{{tabbarCSS + ((index == 1 || index == 0) ? ('margin-left: ' + (index*150+20)) : ('margin-left: ' + ((index-2)*150+480))) + 'rpx;'}}">
+        <!-- <view class="center_part" wx:else>
+        <image class="center_img center-has-image" src="{{item.selectedIconPath}}"></image>
+        </view> -->
+        <view class="txt fontWeight" wx:if="{{selected === index}}" style="color: {{selected === index ?selectedColor : color}};">
+            {{item.text}}
+            <view class="bg_rec"></view>
+        </view>
+        <view class="txt" wx:else>{{item.text}}</view>
+    </view>
+</view>

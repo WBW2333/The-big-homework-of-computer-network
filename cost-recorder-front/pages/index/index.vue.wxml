@@ -1,0 +1,25 @@
+<import src="/components/index/login.vue.wxml" />
+<import src="/components/index/accounts.vue.wxml" /><template name="3196b4ee">
+  <view class="_div data-v-7af411d6">
+    <view wx:if="{{notLogin}}" class="_div data-v-7af411d6"><template bindloginsuccess="handleProxy" data-eventid="{{'0'}}" data-comkey="{{$k}}" data="{{...$root[$kk+'0'], $root}}" is="767d566a"></template></view>
+    <view wx:else class="_div data-v-7af411d6">
+      <view class="_div data-v-7af411d6 news-container">
+        <swiper indicator-dots="true" indicator-color="#ffc83c" autoplay="true" interval="3000" circular="true" class="_swiper data-v-7af411d6">
+          <swiper-item class="_swiper-item data-v-7af411d6">
+            <image class="_image data-v-7af411d6 news-logo" src="https://s1.ax1x.com/2022/06/09/Xy8mut.png" mode="widthFix"></image>
+          </swiper-item>
+          <swiper-item class="_swiper-item data-v-7af411d6">
+            <image class="_image data-v-7af411d6 news-logo" src="https://s1.ax1x.com/2022/06/09/Xy8uHf.png" mode="widthFix"></image>
+          </swiper-item>
+          <swiper-item class="_swiper-item data-v-7af411d6">
+            <image class="_image data-v-7af411d6 news-logo" src="https://s1.ax1x.com/2022/06/09/Xy8nDP.png" mode="widthFix"></image>
+          </swiper-item>
+        </swiper>
+      </view>
+      <view style="border-radius: 10px;" class="_div data-v-7af411d6"><template ref="accounts" data="{{...$root[$kk+'4'], $root}}" is="045ebff4"></template></view>
+      <view class="_div data-v-7af411d6 edit-item-cat" catchtap="handleProxy" data-eventid="{{'1'}}" data-comkey="{{$k}}">
+        <view class="_div data-v-7af411d6">{{record_item.date}}</view>
+      </view>
+    </view>
+  </view>
+</template>

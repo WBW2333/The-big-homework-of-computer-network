@@ -1,0 +1,46 @@
+<import src="/components/add/scrollSelector.vue.wxml" /><template name="045ebff4">
+  <view wx:if="{{items!==[]}}" class="_div data-v-5c943de8">
+    <scroll-view class="_scroll-view data-v-5c943de8 account-area" scroll-y="{{true}}" bindscrolltolower="handleProxy" bindscroll="handleProxy" data-eventid="{{'4'}}" data-comkey="{{$k}}">
+      <view class="_div data-v-5c943de8 item">
+        <view wx:if="{{items === []}}" class="_div data-v-5c943de8">
+          <view class="_div data-v-5c943de8">目前无记录</view>
+        </view>
+        <view wx:else class="_div data-v-5c943de8">
+          <view class="_div data-v-5c943de8 item-details" wx:key="index" key="{{index}}" wx:for="{{processedItems}}" wx:for-index="index" wx:for-item="item" style="{{'opacity:' + item.opacity}}">
+            <view class="_div data-v-5c943de8 item-details-left">
+              <view class="_div data-v-5c943de8 item-details-category" wx:if="{{item.category === '餐饮'}}"><icon class="iconfont icon-eat"></icon></view>
+              <view class="_div data-v-5c943de8 item-details-category" wx:if="{{item.category === '购物'}}"><icon class="iconfont icon-shopping"></icon></view>
+              <view class="_div data-v-5c943de8 item-details-category" wx:if="{{item.category === '理财'}}"><icon class="iconfont icon-licai"></icon></view>
+              <view class="_div data-v-5c943de8 item-details-category" wx:if="{{item.category === '其他'}}"><icon class="iconfont icon-more"></icon></view>
+              <view class="_div data-v-5c943de8 item-details-category" wx:if="{{item.category === '工资'}}"><icon class="iconfont icon-gongzi"></icon></view>
+              <view class="_div data-v-5c943de8 item-details-category" wx:if="{{item.category === '旅行'}}"><icon class="iconfont icon-travel"></icon></view>
+              <view class="_div data-v-5c943de8 item-details-category" wx:if="{{item.category === '宠物'}}"><icon class="iconfont icon-pet"></icon></view>
+              <view class="_div data-v-5c943de8 item-details-category" wx:if="{{item.category === '家庭'}}"><icon class="iconfont icon-family"></icon></view>
+              <view class="_div data-v-5c943de8 item-details-category" wx:if="{{item.category === '礼金'}}"><icon class="iconfont icon-lijing"></icon></view>
+              <view class="_div data-v-5c943de8 item-details-category" wx:if="{{item.category === '教育'}}"><icon class="iconfont icon-education"></icon></view>
+              <view class="_div data-v-5c943de8 item-details-category" wx:if="{{item.category === '社交'}}"><icon class="iconfont icon-social"></icon></view>
+              <view class="_div data-v-5c943de8 item-details-category" wx:if="{{item.category === '医疗'}}"><icon class="iconfont icon-medical"></icon></view>
+              <view class="_div data-v-5c943de8 item-details-category" wx:if="{{item.category === '交通'}}"><icon class="iconfont icon-transport"></icon></view>
+            </view>
+            <view class="_div data-v-5c943de8 item-details-middle">
+              <view class="_div data-v-5c943de8 details-top">
+                <view class="_div data-v-5c943de8 item-details-date" bindtap="handleProxy" data-eventid="{{'0_'+index}}" data-comkey="{{$k}}"><label class="_span data-v-5c943de8">{{item.date}}</label></view>
+                <view class="_div data-v-5c943de8 item-details-pay" ><label class="_span data-v-5c943de8">{{item.type === 0 ? '支出' : '收入'}}</label></view>
+              </view>
+              <view class="_div data-v-5c943de8 details-bottom">
+                <view class="_div data-v-5c943de8 item-details-pay"><label class="_span data-v-5c943de8">{{item.category}}</label></view>
+                <view class="_div data-v-5c943de8 item-details-desc" bindtap="handleProxy" data-eventid="{{'1_'+index}}" data-comkey="{{$k}}"><label class="_span data-v-5c943de8">{{item.note}}</label></view>
+              </view>
+            </view>
+            <view class="_div data-v-5c943de8 item-details-right">
+              <view class="_div data-v-5c943de8 item-details-bottom" bindtap="handleProxy" data-eventid="{{'2_'+index}}" data-comkey="{{$k}}"><label class="_span data-v-5c943de8 {{item.type === 0 ? 'out' : 'in'}}">{{item.amount}}</label></view>
+              <view class="_div data-v-5c943de8 item-details-top" bindtap="handleProxy" data-eventid="{{'3_'+index}}" data-comkey="{{$k}}"><label class="_span data-v-5c943de8">x</label></view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </scroll-view>
+    <view hidden="{{!(showSelector)}}" class="_div data-v-5c943de8 cal-root"><template bindres="handleProxy" ref="selector" data-eventid="{{'5'}}" data-comkey="{{$k}}" data="{{...$root[$kk+'0'], $root}}" is="0beef52b"></template></view>
+  </view>
+  <view wx:else class="_div data-v-5c943de8"> 暂无记账记录 </view>
+</template>

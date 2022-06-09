@@ -1,0 +1,82 @@
+<!--index.wxml-->
+<page>
+
+
+<view class="top_box">
+  <button class="{{isIncome==true ? 'button' : 'buttonChoose'}}" bindtap="clickOutput">支出</button>
+  <button class="{{isIncome==false ? 'button' : 'buttonChoose'}}" bindtap="clickIncome">收入</button>
+</view>
+
+<view wx:if="{{isIncome==false}}">
+  <view class="box">
+    <view class="eachCategory" bindtap="bindViewTap" data-theme="餐饮">
+      <view class="eachPhoto"><icon class="iconfont icon-eat"></icon></view>
+      <view class="eachName">餐饮</view>
+    </view>
+    <view class="eachCategory" bindtap="bindViewTap" data-theme="购物">
+      <view class="eachPhoto"><icon class="iconfont icon-shopping"></icon></view>
+      <view class="eachName">购物</view>
+    </view>
+    <view class="eachCategory" bindtap="bindViewTap" data-theme="交通">
+      <view class="eachPhoto"><icon class="iconfont icon-transport"></icon></view>
+      <view class="eachName">交通</view>
+    </view>
+    <view class="eachCategory" bindtap="bindViewTap" data-theme="家庭">
+      <view class="eachPhoto"><icon class="iconfont icon-family"></icon></view>
+      <view class="eachName">家庭</view>
+    </view>
+  </view>
+  <view class="box">
+    <view class="eachCategory" bindtap="bindViewTap" data-theme="教育">
+      <view class="eachPhoto"><icon class="iconfont icon-education"></icon></view>
+      <view class="eachName">教育</view>
+    </view>
+    <view class="eachCategory" bindtap="bindViewTap" data-theme="医疗">
+      <view class="eachPhoto"><icon class="iconfont icon-medical"></icon></view>
+      <view class="eachName">医疗</view>
+    </view>
+    <view class="eachCategory" bindtap="bindViewTap" data-theme="旅行">
+      <view class="eachPhoto"><icon class="iconfont icon-travel"></icon></view>
+      <view class="eachName">旅行</view>
+    </view>
+    <view class="eachCategory" bindtap="bindViewTap" data-theme="宠物">
+      <view class="eachPhoto"><icon class="iconfont icon-pet"></icon></view>
+      <view class="eachName">宠物</view>
+    </view>
+  </view>
+  <view class="box">
+    <view class="eachCategory" bindtap="bindViewTap" data-theme="社交">
+      <view class="eachPhoto"><icon class="iconfont icon-social"></icon></view>
+      <view class="eachName">社交</view>
+    </view>
+    <view class="eachCategory" bindtap="bindViewTap" data-theme="其他">
+      <view class="eachPhoto"><icon class="iconfont icon-more"></icon></view>
+      <view class="eachName">其他</view>
+    </view>
+  </view>
+</view>
+<view wx:if="{{isIncome==true}}">
+  <view class="box">
+    <view class="eachCategory" bindtap="bindViewTap" data-theme="工资">
+      <view class="eachPhoto"><icon class="iconfont icon-gongzi"></icon></view>
+      <view class="eachName">工资</view>
+    </view>
+    <view class="eachCategory" bindtap="bindViewTap" data-theme="理财">
+      <view class="eachPhoto"><icon class="iconfont icon-licai"></icon></view>
+      <view class="eachName">理财</view>
+    </view>
+    <view class="eachCategory" bindtap="bindViewTap" data-theme="礼金">
+      <view class="eachPhoto"><icon class="iconfont icon-lijing"></icon></view>
+      <view class="eachName">礼金</view>
+    </view>
+    <view class="eachCategory" bindtap="bindViewTap" data-theme="其他">
+      <view class="eachPhoto"><icon class="iconfont icon-more"></icon></view>
+      <view class="eachName">其他</view>
+    </view>
+  </view>
+</view>
+<view wx:if="{{show==true}}">
+  <view class="jumpBox">here</view>
+</view>
+</page>
+

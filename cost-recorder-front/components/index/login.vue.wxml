@@ -1,0 +1,7 @@
+<template name="767d566a">
+  <view class="_div data-v-7bac8952 login-container">
+    <view class="_div data-v-7bac8952">
+      <view class="_div data-v-7bac8952 login-welcome">热爱生活，不断向上</view> <button class="_button data-v-7bac8952 login-btn" open-type="getUserProfile" bindtap="handleProxy" data-eventid="{{'0'}}" data-comkey="{{$k}}">授权登录</button>
+    </view>
+  </view>
+</template>

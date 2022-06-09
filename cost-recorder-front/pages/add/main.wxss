@@ -1,0 +1,117 @@
+/**index.wxss**/
+page {
+  background-color: #f6f6f6;
+  padding-bottom: 60rpx;
+  z-index: 1;
+}
+.top_box {
+  margin-top: 0rpx;
+  height: 130rpx;
+  width: 100%;
+  background-color: #ffc83c;
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+}
+.button{
+    width: 300rpx;
+  position: relative;
+  height: 80rpx;
+  border-radius: 2mm;
+  margin-left: 50rpx;
+  margin-right: 50rpx;
+  margin-top: 10rpx;
+  margin-bottom: 10rpx;
+  font-size: 36rpx;
+  text-align: center;
+}
+.buttonChoose{
+    width: 300rpx;
+  background-color: #ffc83c;
+  position: relative;
+  height: 80rpx;
+  border-radius: 1mm;
+  margin-left: 50rpx;
+  margin-right: 50rpx;
+  margin-top: 10rpx;
+  margin-bottom: 10rpx;
+  font-size: 36rpx;
+  text-align: center;
+}
+.box {
+  display: flex;
+  flex-direction: row;
+  height: 210rpx;
+}
+.eachCategory {
+  width: 180rpx;
+  height: 210rpx;
+  display: flex;
+  margin-left: 5rpx;
+  margin-right: 5rpx;
+  flex-direction: column;
+}
+.eachPhoto {
+  background-color:rgb(230, 230, 230);
+  display: flex;
+  align-items: center;
+  width: 150rpx;
+  height: 150rpx;
+  border-radius: 50%;
+  margin-left: 15rpx;
+  margin-right: 15rpx;
+  margin-top: 10rpx;
+}
+.eachPhotoChoose {
+  display: flex;
+  align-items: center;
+  width: 150rpx;
+  height: 150rpx;
+  border-radius: 50%;
+  margin-left: 15rpx;
+  margin-right: 15rpx;
+  margin-top: 10rpx;
+}
+.eachName {
+  text-align: center;
+  font-size: 28rpx;
+}
+
+@font-face {
+  font-family: 'iconfont';  /* Project id 3404748 */
+  src: url('//at.alicdn.com/t/font_3404748_ojmkr4perr9.woff2?t=1652703575190') format('woff2'),
+       url('//at.alicdn.com/t/font_3404748_ojmkr4perr9.woff?t=1652703575190') format('woff'),
+       url('//at.alicdn.com/t/font_3404748_ojmkr4perr9.ttf?t=1652703575190') format('truetype');
+}
+
+.iconfont{
+  font-family:"iconfont";
+  font-size:120rpx;
+  font-style:normal;
+  margin-left: 15rpx;
+  margin-right: 15rpx;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.icon-shopping:before{content: '\e73d';}
+.icon-licai:before{content: '\e623';}
+.icon-more:before{content: '\e618';}
+.icon-gongzi:before{content: '\e615';}
+.icon-travel:before{content: '\e60e';}
+.icon-pet:before{content: '\e612';}
+.icon-family:before{content: '\e644';}
+.icon-lijing:before{content: '\e61a';}
+.icon-eat:before{content: '\e63e';}
+.icon-education:before{content: '\e61f';}
+.icon-social:before{content: '\e622';}
+.icon-medical:before{content: '\e60f';}
+.icon-transport:before{content: '\e653';}
+
+
+.jumpBox {
+  position: absolute;
+  background-color: blueviolet;
+  height: 400rpx;
+  width: 600rpx;
+  z-index: 2;
+}

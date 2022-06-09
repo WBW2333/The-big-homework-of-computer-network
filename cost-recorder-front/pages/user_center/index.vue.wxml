@@ -1,0 +1,31 @@
+<template name="71b4b425">
+  <view class="_div data-v-36043e66">
+    <view class="_div data-v-36043e66 avatar-container">
+      <view class="_div data-v-36043e66 col">
+        <image src="{{currentUser.avatarUrl}}" alt class="_img data-v-36043e66"></image>
+        <view class="_div data-v-36043e66">{{currentUser.nickName}}</view>
+      </view>
+    </view>
+    <view class="_div data-v-36043e66 user-options" bindtap="handleProxy" data-eventid="{{'0'}}" data-comkey="{{$k}}">
+      <view class="_div data-v-36043e66 left-msg">制作人员</view>
+      <view class="_div data-v-36043e66 right-msg"> > </view>
+    </view>
+    <view class="_div data-v-36043e66 user-options" bindtap="handleProxy" data-eventid="{{'1'}}" data-comkey="{{$k}}">
+      <view class="_div data-v-36043e66 left-msg">联系我们</view>
+      <view class="_div data-v-36043e66 right-msg"> > </view>
+    </view> <button class="_button data-v-36043e66 logout" bindtap="handleProxy" data-eventid="{{'2'}}" data-comkey="{{$k}}">退出</button>
+    <view class="_div data-v-36043e66 news-container">
+      <swiper indicator-dots="true" indicator-color="#ffc83c" autoplay="true" interval="3000" circular="true" class="_swiper data-v-36043e66">
+        <swiper-item class="_swiper-item data-v-36043e66">
+          <image class="_image data-v-36043e66 news-logo" src="https://s1.ax1x.com/2022/06/09/Xy8mut.png" mode="widthFix"></image>
+        </swiper-item>
+        <swiper-item class="_swiper-item data-v-36043e66">
+          <image class="_image data-v-36043e66 news-logo" src="https://s1.ax1x.com/2022/06/09/Xy8uHf.png" mode="widthFix"></image>
+        </swiper-item>
+        <swiper-item class="_swiper-item data-v-36043e66">
+          <image class="_image data-v-36043e66 news-logo" src="https://s1.ax1x.com/2022/06/09/Xy8nDP.png" mode="widthFix"></image>
+        </swiper-item>
+      </swiper>
+    </view>
+  </view>
+</template>

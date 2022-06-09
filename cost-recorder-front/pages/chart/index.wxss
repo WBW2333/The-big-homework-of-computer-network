@@ -1,0 +1,110 @@
+.selectBox{
+    width: 750rpx;
+    background: rgb(260, 200, 60);
+}
+
+#select_box{
+    max-height: 240rpx;
+    width: 200rpx;
+    margin-left: 275rpx;
+    vertical-align: middle;
+    left: 0rpx;
+    background: rgb(260, 200, 60);
+}
+
+.selectBox_list{
+    max-height: 240rpx;
+    width: 100rpx;
+    vertical-align: middle;
+}
+
+.progress {
+    height: 6px;
+    opacity: 1;
+    background: rgb(260, 200, 60);
+    color: RGBA(260, 200, 60, 0);
+    overflow: hidden;
+    text-align: center;
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 3px;
+}
+
+#select_chart {
+    width: 200rpx;
+    margin-left: 275rpx;
+    vertical-align: middle;
+}
+
+.progress-bar {
+    width: 600rpx;
+    height: 10px;
+    text-align: center;
+    line-height: 10px;
+    box-sizing: border-box;
+    /*margin-top: 50px;*/
+    /*margin-bottom: 20px;*/
+    /*border: 1px saddlebrown;*/
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 10px 10px;
+    background: #FFF;
+    position: relative;
+    margin-left: 5px;
+    /* padding-left: 10px; */
+}
+
+.selectChart_list{
+    display: flex;
+    flex-flow: row nowrap;
+}
+
+.chart {
+    justify-content: center;
+    width: 500rpx;
+    height: 500rpx;
+    position: center;
+    align-items: center;
+    margin-left: 125rpx;
+}
+
+.wrap {
+    width: 100%;
+    height: 300px;
+}
+
+.selectChart_listLi {
+    width: 250rpx;
+    border: #000000;
+    background: rgb(260, 200, 60);
+    text-align: center;
+    border-bottom-width: 1px;
+    border-left-width: 1px;
+    border-right-width: 1px;
+    border-top-width: 1px;
+    border-style: solid;
+}
+
+.bill_text{
+    padding-left: 15px;
+}
+
+.bill_information {
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    padding-bottom: 20px;
+}
+
+.list_name{
+    font-size: 35rpx;
+    font-weight: bold;
+}
+
+.list_nameLi{
+    border-top-style: solid;
+    border-top-width: 750rpx;
+    border-top-width: 1px;
+    margin-bottom: 20rpx;
+    margin-top: 50rpx;
+}
+
