@@ -37,6 +37,7 @@
               <view class="_div data-v-5c943de8 item-details-top" bindtap="handleProxy" data-eventid="{{'3_'+index}}" data-comkey="{{$k}}"><label class="_span data-v-5c943de8">x</label></view>
             </view>
           </view>
+          <view style="height: 166rpx;"></view>
         </view>
       </view>
     </scroll-view>

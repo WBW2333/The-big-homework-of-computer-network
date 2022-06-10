@@ -35,4 +35,4 @@
     <p class="list_name">未查询到用户{{dataList[kind].value}}账单记录</p>
 </view>
 </view>
-<view style="height: 160rpx;"></view>
+<view style="height: 266rpx;"></view>
