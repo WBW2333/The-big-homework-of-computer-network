@@ -1,6 +1,6 @@
 {
     "appid": "wx6f8eb878468dbda3",
-    "projectname": "wx",
+    "projectname": "cost-recorder-front",
     "compileType": "miniprogram",
     "libVersion": "2.24.3",
     "packOptions": {

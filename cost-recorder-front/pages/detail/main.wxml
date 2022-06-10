@@ -2,7 +2,7 @@
 <view class="theme">{{theme}}</view>
 <view class="each">
   <view class="content">金额:</view>
-  <input class="input" bindinput="getAmount" type="number"/>
+  <input class="input" maxlength='{{maxlength}}' bindinput="getAmount" type="digit"/>
   <view class="content">元</view>
 </view>
 <view class="each">

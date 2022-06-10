@@ -203,6 +203,11 @@ if (false) {(function () {
         })
     } 
   },
+  onPullDownRefresh: function () {
+    var page = getCurrentPages().pop();
+    this.getRecord();
+    wx.stopPullDownRefresh()
+  },
 
   methods: {
     loginSuccess: function loginSuccess() {

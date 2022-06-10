@@ -84,7 +84,8 @@ Page({
       amount:'',
       date:''
     },
-    openid:''
+    openid:'',
+    maxlength:50,//通过maxlength属性限制输入两位小数
   },
   onLoad: function(options) {
     let that = this
@@ -110,19 +111,22 @@ Page({
       theme:name,
       record:this.data.record,
     })
-    //console.log("type="+this.data.record.type);
     setDate(this.data.year, this.data.month, this.data.day, this)
   },
   bindChange: function (e) {
     let val = e.detail.value;
     setDate(this.data.years[val[0]], this.data.months[val[1]], this.data.days[val[2]], this);
     this.data.record.date=this.data.years[val[0]]+"/"+this.data.months[val[1]]+"/"+this.data.days[val[2]];
-    //console.log(this.data.record.date);
   },
   getAmount:function(e){
-    this.data.record.amount=e.detail.value;
+    let price = e.detail.value;
+    let maxlength = price.indexOf('.') + 3;
+    if(maxlength == 2){
+      maxlength = 50;
+    }
     this.setData({
-      record:this.data.record
+      maxlength:maxlength,
+      'record.amount':price
     })
   },
   getNote:function(e){
@@ -136,7 +140,6 @@ Page({
     var mm=this.data.month+'';
     var dd=this.data.day+'';
     var d=yyyy+"/"+mm+"/"+dd;
-    //console.log(d);
     
     if(this.data.record.date==''){
       this.data.record.date=d;
@@ -157,13 +160,9 @@ Page({
           "date":this.data.record.date,
           "userid":this.data.openid,
         },
-        method: 'POST', // OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT
-        // header: {}, // 设置请求的 header
+        method: 'POST',
         success: function(res){
-          // success
           console.log(res.data)
-          //console.log("toRed success"+res.data.uid+' '+res.data.uname);
-          //console.log(openid)
           console.log("toRed success");
           console.log(res.data.msg);
           if(res.data.msg == 'Success!'){
@@ -176,15 +175,8 @@ Page({
           }
         },
         fail: function(res) {
-          // fail
-          //console.log("toRed fail:"+res);
           console.log("toRed fail:");
         },
-      //   complete: function(res) {
-      //     // complete
-      //     //console.log("toRed complete:"+res);
-      //     console.log("toRed complete:");
-      //   }
       })
       wx.navigateBack({});
       wx.showToast({
@@ -202,22 +194,5 @@ Page({
         confirmColor: '#000000'	
       })  
     }
-
-    /*
-    wx.getUserInfo({
-      success: function(res) {
-        var userInfo = res.userInfo;
-        console.log(userInfo);
-        var userInfo = res.userInfo
-        var nickName = userInfo.nickName
-        var avatarUrl = userInfo.avatarUrl
-        var gender = userInfo.gender //性别 0：未知、1：男、2：女
-        var province = userInfo.province
-        var city = userInfo.city
-        var country = userInfo.country
-      }
-    })
-    */
-   
   }
 })
