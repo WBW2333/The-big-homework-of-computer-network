@@ -44,6 +44,7 @@ Page({
         chart_type_name: ['圆饼图', '折线图', '柱状图'],
         chart_type: 0,
         tot_data: [],
+        bill_is_show: [false, false],
         come: [[], []]  //分别储存收入和支出的总额，按种类分条记录
     },
     sor: function (){
@@ -211,8 +212,8 @@ Page({
                 'content-type': 'application/json'
             },
         success: function (res) {
-            console.log(res.data)
-            console.log(that.data.tot_data)
+            // console.log(res.data)
+            // console.log(that.data.tot_data)
             if(res.data.length !== 0){
                 that.setData({
                     tot: [0, 0],
@@ -227,28 +228,28 @@ Page({
                         tot_data: res.data
                     })
                 }
-                console.log(that.data.tot_data)
+                // console.log(that.data.tot_data)
                 that.sor()
                 that.cal()
-                if(that.data.come[0].length != 0 && that.data.come[1].length === 0){
-                    that.make_pie()
+                // console.log(that.data.come[0].length)
+                // console.log(that.data.come[1].length)
+                if(that.data.come[0].length != 0){
+                    if(that.data.kind === 0){
+                        that.make_pie()
+                    }
                     that.setData({
-                        bill_is_show: [true, false]
+                        bill_is_show: [true, that.data.bill_is_show[1]]
                     })
                 }
-                if(that.data.come[0].length === 0 && that.data.come[1].length != 0){
-                    that.make_pie()
+                if(that.data.come[1].length > 0){
+                    if(that.data.kind === 1){
+                        that.make_pie()
+                    }
                     that.setData({
-                        bill_is_show: [false, true]
+                        bill_is_show: [that.data.bill_is_show[0], true]
                     })
                 }
-                else{
-                    that.make_pie()
-                    that.setData({
-                        bill_is_show: [true, true]
-                    })
-                }
-                // console.log(this.data.bill_is_show)
+                // console.log(that.data.bill_is_show)
             }
             else{
                 that.setData({

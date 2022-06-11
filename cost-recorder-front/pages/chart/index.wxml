@@ -14,7 +14,8 @@
     </view>
 </view>
 
-<canvas canvas-id="Canvas" class="chart"></canvas>
+<canvas canvas-id="Canvas" class="chart" wx:if="{{bill_is_show[kind]}}"></canvas>
+<view wx:else="" style="height: 300rpx;"></view>
 
 <view class="bill_list" wx:if="{{bill_is_show[kind]}}">
     <view class="list_nameLi">
@@ -34,5 +35,5 @@
 <view wx:else="">
     <p class="list_name">未查询到用户{{dataList[kind].value}}账单记录</p>
 </view>
+<view style="height: 200rpx;"></view>
 </view>
-<view style="height: 266rpx;"></view>
