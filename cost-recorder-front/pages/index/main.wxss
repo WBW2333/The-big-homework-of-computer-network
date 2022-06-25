@@ -91,8 +91,8 @@
     flex-direction: row;
   }
   .item .item-details .item-details-left .item-details-category.data-v-5c943de8 {
-    height: 80rpx;
-    width: 80rpx;
+    height: 88rpx;
+    width: 88rpx;
     display: flex;
     flex-direction: column;
     align-self: center;
@@ -102,6 +102,7 @@
     font-weight: bolder;
     border-radius: 198rpx;
     margin-left: 10rpx;
+    margin-bottom: 5rpx;
   }
   .item .item-details .item-details-left .item-details-category ._span.data-v-5c943de8 {
     line-height: 80rpx;
@@ -237,8 +238,8 @@
     font-family:"iconfont";
     font-size:70rpx;
     font-style:normal;
-    margin-top: 6rpx;
-    margin-left: 7rpx;
+    margin-top: 10rpx;
+    margin-left: 10rpx;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }

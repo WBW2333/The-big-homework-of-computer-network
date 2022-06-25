@@ -166,12 +166,7 @@ Page({
           console.log("toRed success");
           console.log(res.data.msg);
           if(res.data.msg == 'Success!'){
-              wx.reLaunch({
-                url: '../index/main',
-                success (res) {
-                    console.log(res)
-                }
-              })
+              
           }
         },
         fail: function(res) {
@@ -182,7 +177,15 @@ Page({
       wx.showToast({
         title: '成功',
         icon: 'success',
-        duration: 1500
+        duration: 3000,
+        success: function(res){
+          wx.reLaunch({
+            url: '../index/main',
+            success (res) {
+                console.log(res)
+            }
+          })
+        }
       })
     }else{
       wx.showModal({
@@ -190,7 +193,7 @@ Page({
         title: '提示',
         content: '金额不能为空,金额必须是数字',
         confirmText: '好的',
-        showCancel:true,
+        showCancel:false,
         confirmColor: '#000000'	
       })  
     }
